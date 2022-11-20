@@ -10,6 +10,17 @@
           "meta[name=theme-color]"
         ]
       }
+    ],
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "min-width: fit-content",
+          "width: fit-content",
+          "background-clip",
+          "height: fit-content"
+        ]
+      }
     ]
   }
 }

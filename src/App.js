@@ -1,9 +1,14 @@
 import "./App.css";
+import BoardContainer from "./components/BoardContainer/BoardContainer";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <NavBar />
+      <div className="App_outer">
+        <BoardContainer />
+      </div>
     </div>
   );
 }

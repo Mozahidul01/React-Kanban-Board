@@ -1,0 +1,11 @@
+.boards {
+  min-width: fit-content;
+  height: 100%;
+  display: flex;
+  padding: 20px 15px 10px 15px;
+  gap: 25px;
+}
+
+.boards_newboard {
+  width: 350px;
+}
