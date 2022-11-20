@@ -55,3 +55,45 @@
 .cardinfo_box_colors .active {
   border: 3px solid #0c9200;
 }
+
+.cardinfo_box_progress-bar {
+  height: 10px;
+  border-radius: 20px;
+  width: 100%;
+  border: 1px solid #333333;
+}
+
+.cardinfo_box_progress {
+  height: 10px;
+  border-radius: 20px;
+  background-color: #333333;
+}
+
+.cardinfo_box_progress-active {
+  background-color: #0c9200;
+}
+
+.cardinfo_box_tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardinfo_task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 5px;
+}
+
+.cardinfo_task p {
+  flex: 1;
+  line-height: 20px;
+}
+
+.cardinfo_task input,
+svg {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}

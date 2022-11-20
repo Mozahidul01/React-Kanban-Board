@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Calendar, List, Tag, Type } from "react-feather";
+import { Calendar, CheckCircle, List, Tag, Trash2, Type } from "react-feather";
 import Editable from "../../Editable/Editable";
 import Labels from "../../Labels/Labels";
 import Modal from "../../Modal/Modal";
@@ -74,8 +74,36 @@ export default function Cardinfo({ onClose }) {
           <div className="cardinfo_box_body">
             <Editable
               text="Add Labels"
-              placeholder="Add Labels"
+              placeholder="Enter Labels"
               buttonText="Set Labels"
+            />
+          </div>
+        </div>
+
+        <div className="cardinfo_box">
+          <div className="cardinfo_box_text">
+            <CheckCircle /> Task
+          </div>
+          <div className="cardinfo_box_progress-bar">
+            <div className="cardinfo_box_progress" style={{ width: "50%" }} />
+          </div>
+          <div className="cardinfo_box_tasks">
+            <div className="cardinfo_task">
+              <input type="checkbox" />
+              <p>Task 01</p>
+              <Trash2 />
+            </div>
+            <div className="cardinfo_task">
+              <input type="checkbox" />
+              <p>Task 02</p>
+              <Trash2 />
+            </div>
+          </div>
+          <div className="cardinfo_box_body">
+            <Editable
+              text="Add Task"
+              placeholder="Enter Task"
+              buttonText="Set Task"
             />
           </div>
         </div>
