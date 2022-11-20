@@ -7,6 +7,7 @@
 
 .App_outer {
   flex: 1;
+  justify-content: center;
   width: 100%;
   overflow-x: auto;
 }

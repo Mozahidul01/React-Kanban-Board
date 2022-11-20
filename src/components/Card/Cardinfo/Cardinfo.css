@@ -35,3 +35,23 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+.cardinfo_box_colors {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.cardinfo_box_colors li {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  list-style: none;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: border 0.3s ease-in-out;
+}
+
+.cardinfo_box_colors .active {
+  border: 3px solid #0c9200;
+}

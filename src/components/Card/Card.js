@@ -12,7 +12,7 @@ export default function Card({
   dragEntered,
   boardId,
 }) {
-  const { id, title, tasks, labels, date } = card;
+  const { id, title, labels, date } = card;
   const [showDropdown, setShowDropdown] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
