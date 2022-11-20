@@ -1,0 +1,37 @@
+.cardinfo {
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 580px;
+}
+
+.cardinfo_box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cardinfo_box_text {
+  display: flex;
+  font-size: 1.3rem;
+  font-weight: 600;
+  gap: 10px;
+  align-items: center;
+}
+
+.cardinfo_box_body {
+  width: fit-content;
+}
+
+.cardinfo_box_body input {
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border: 3px solid #333333;
+  padding: 10px 21px;
+  border-radius: 8px;
+  cursor: pointer;
+}

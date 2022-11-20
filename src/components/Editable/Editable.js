@@ -57,7 +57,7 @@ export default function Editable({
           className={`editable_display ${displayClass || ""}`}
           onClick={() => setShowEdit(true)}
         >
-          <Plus /> {text || "Add item"} <span /> <span /> <span /> <span />
+          {text || "Add item"} <span /> <span /> <span /> <span />
         </p>
       )}
     </div>
