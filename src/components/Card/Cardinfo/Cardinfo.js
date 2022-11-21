@@ -84,6 +84,7 @@ export default function Cardinfo({ card, onClose, updateCard, boardId }) {
   // Card Update
   useEffect(() => {
     updateCard(card.id, boardId, values);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values]);
 
   return (
