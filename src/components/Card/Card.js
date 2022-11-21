@@ -11,6 +11,7 @@ export default function Card({
   dragEnded,
   dragEntered,
   boardId,
+  updateCard,
 }) {
   const { id, title, labels, date } = card;
   const [showDropdown, setShowDropdown] = useState(false);
@@ -18,7 +19,14 @@ export default function Card({
 
   return (
     <>
-      {showModal && <Cardinfo onClose={() => setShowModal(false)} />}
+      {showModal && (
+        <Cardinfo
+          updateCard={updateCard}
+          boardId={boardId}
+          card={card}
+          onClose={() => setShowModal(false)}
+        />
+      )}
 
       <div
         className="card"
@@ -58,10 +66,13 @@ export default function Card({
               <Clock /> {date}
             </p>
           )}
-          <p>
-            <CheckSquare />
-            1/4
-          </p>
+          {card?.tasks?.length > 0 && (
+            <p>
+              <CheckSquare />
+              {card?.tasks?.filter((item) => item.completed).length}/
+              {card?.tasks?.length}
+            </p>
+          )}
         </div>
       </div>
     </>

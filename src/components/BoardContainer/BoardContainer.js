@@ -1,50 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Board from "../Board/Board";
 import Editable from "../Editable/Editable";
 import "./BoardContainer.css";
 
 export default function Boards() {
   const [boards, setBoards] = useState([
-    {
-      id: Math.random() * 5,
-      title: "Requesting",
-      background: "#FEBE8C",
-      cards: [
-        {
-          id: Math.random() * 5,
-          title: "A urgent task",
-          tasks: [],
-          labels: [
-            {
-              text: "Urgent",
-              color: "#FF6464",
-            },
-          ],
-          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi consequat at elit feugiat tempus. In malesuada venenatis nunc. Duis sed vestibulum turpis, sed congue neque. Etiam sollicitudin ultrices risus molestie.",
-          date: new Date().toDateString(),
-        },
-      ],
-    },
-    {
-      id: Math.random() * 5,
-      title: "Progressing",
-      background: "#FFFBC1",
-      cards: [
-        {
-          id: Math.random() * 5,
-          title: "A important task",
-          tasks: [],
-          labels: [
-            {
-              text: "Important",
-              color: "#379237",
-            },
-          ],
-          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi consequat at elit feugiat tempus. In malesuada venenatis nunc. Duis sed vestibulum turpis, sed congue neque. Etiam sollicitudin ultrices risus molestie.",
-          date: new Date().toDateString(),
-        },
-      ],
-    },
+    JSON.parse(localStorage.getItem("kanban")) || [],
   ]);
 
   const [target, setTarget] = useState({ cId: "", bId: "" });
@@ -54,8 +15,7 @@ export default function Boards() {
     setBoards([
       ...boards,
       {
-        id: Math.random() * 5,
-        background: background,
+        id: Math.random() * 1000,
         title: title,
         cards: [],
       },
@@ -137,6 +97,26 @@ export default function Boards() {
     setBoards(tempBoards);
   };
 
+  // Card Update function
+  const updateCard = (cId, bId, card) => {
+    const boardIndex = boards.findIndex((item) => item.id === bId);
+    if (boardIndex < 0) return;
+
+    const cardIndex = boards[boardIndex].cards.findIndex(
+      (item) => item.id === cId
+    );
+    if (cardIndex < 0) return;
+
+    const tempBoards = [...boards];
+    tempBoards[boardIndex].cards[cardIndex] = card;
+    setBoards(tempBoards);
+  };
+
+  // Save to local storage
+  useEffect(() => {
+    localStorage.setItem("kanban", JSON.stringify(boards));
+  }, [boards]);
+
   return (
     <div className="boards">
       {boards.map((item) => (
@@ -148,6 +128,7 @@ export default function Boards() {
           removeCard={removeCard}
           dragEntered={handleDragEnter}
           dragEnded={handleDragEnd}
+          updateCard={updateCard}
         />
       ))}
 

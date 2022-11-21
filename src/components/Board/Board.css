@@ -12,7 +12,7 @@
   display: flex;
   padding: 20px;
   overflow: content;
-  background: #eeeeee;
+  background: #7a7a7a;
   border-bottom: 2px solid #333333;
   border-radius: 18px 18px 0px 0px;
 }
@@ -21,19 +21,21 @@
   flex: 1;
   display: flex;
   align-items: center;
+  color: #f8f8f8;
   font-size: 1.125rem;
   font-weight: 600;
   text-transform: capitalize;
 }
 
 .board_top_title span {
-  color: #292929;
+  color: #ffffff;
   padding-left: 15px;
 }
 
 .board_top_more {
   position: relative;
   cursor: pointer;
+
 }
 
 .board_dropdown {

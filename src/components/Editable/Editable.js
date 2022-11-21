@@ -5,13 +5,12 @@ export default function Editable({
   buttonText,
   placeholder,
   text,
-  defaultValue,
   onSubmit,
   editClass,
   displayClass,
 }) {
   const [showEdit, setShowEdit] = useState(false);
-  const [inputValue, setInputValue] = useState(defaultValue || "");
+  const [inputValue, setInputValue] = useState("");
 
   return (
     <div className="editable">

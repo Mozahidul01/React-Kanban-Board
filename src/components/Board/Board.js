@@ -12,6 +12,7 @@ export default function Board({
   removeCard,
   dragEntered,
   dragEnded,
+  updateCard,
 }) {
   const { id, title, background, cards } = board;
 
@@ -47,6 +48,7 @@ export default function Board({
             boardId={id}
             dragEntered={dragEntered}
             dragEnded={dragEnded}
+            updateCard={updateCard}
           />
         ))}
         <Editable

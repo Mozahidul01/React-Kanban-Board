@@ -64,10 +64,12 @@
   gap: 10px;
 }
 
-.editable_edit input {
-  border-radius: 3px;
+.editable_edit input,
+textarea {
+  border-radius: 8px;
+  width: fit-content;
   outline: none;
-  border: 1px solid #333333;
+  border: 3px solid #333333;
   padding: 12px;
   font-size: 1rem;
 }
